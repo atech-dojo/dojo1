@@ -1,4 +1,5 @@
-# dojo1
+# Dojo1
+
 Dependências Transitivas
 
 Vamos escrever algum código para calcular como as dependências se propagam entre coisas como classes em um programa.
