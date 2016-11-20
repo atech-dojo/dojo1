@@ -19,7 +19,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldResolveWithNoDepedency(){
+	public void souldResolveWithNoDependency(){
 		String input = "A\nB\nC\nD\nE\nF";
 		
 		String result = new TransitiveDependency(input).toString();
@@ -27,7 +27,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldResolveAnotherSimpleDepedency(){
+	public void souldResolveAnotherSimpleDependency(){
 		String input = "A B";
 		
 		String result = new TransitiveDependency(input).toString();
@@ -35,7 +35,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldResolveDepedencyWithThreeParameters(){
+	public void souldResolveDependencyWithThreeParameters(){
 		String input = "A B\nB C";
 		
 		String result = new TransitiveDependency(input).toString();
@@ -43,14 +43,14 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test(expected=CyclicDependencyException.class)
-	public void souldResolveDepedencyCyclicDependency(){
+	public void souldResolveDependencyCyclicDependency(){
 		String input = "A B\nB A";
 		
 		new TransitiveDependency(input).toString();
 	}
 	
 	@Test
-	public void souldResolveDepedencyWithFourParameters(){
+	public void souldResolveDependencyWithFourParameters(){
 		String input = "A B\nB C\nC D";
 		
 		String result = new TransitiveDependency(input).toString();
@@ -58,7 +58,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldResolveDepedencyExample(){
+	public void souldResolveDependencyExample(){
 		String input = 	  "A B C\n"+
 						  "B C E\n"+
 						  "C G\n"+
@@ -76,7 +76,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldParseASimpleDepedency(){
+	public void souldParseASimpleDependency(){
 		String input = "A";
 		
 		TransitiveDependency transitiveDependency = new TransitiveDependency(input);
@@ -86,7 +86,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldParseAnotherSimpleDepedency(){
+	public void souldParseAnotherSimpleDependency(){
 		String input = "A B";
 		
 		TransitiveDependency transitiveDependency = new TransitiveDependency(input);
@@ -97,7 +97,7 @@ public class TransitiveDependencyTest {
 	}
 	
 	@Test
-	public void souldParseDepedencyWithThreeParameters(){
+	public void souldParseDependencyWithThreeParameters(){
 		String input = "A B\nB C";
 		
 		TransitiveDependency transitiveDependency = new TransitiveDependency(input);

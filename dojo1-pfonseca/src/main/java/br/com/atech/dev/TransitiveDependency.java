@@ -13,7 +13,7 @@ public class TransitiveDependency {
 	
 	public TransitiveDependency(String input){
 		this.dependencyTree = parse(input);
-		solveDepedencies();
+		solveDependencies();
 	}
 
 	public String toString() {
@@ -38,13 +38,13 @@ public class TransitiveDependency {
 				
 				String[] values = row.split(" ");
 				String key = values[0];
-				Set<String> depedencies = new HashSet<>();
+				Set<String> dependencies = new HashSet<>();
 				
 				for(int i=1; i < values.length; i++){
-					depedencies.add(values[i]);
+					dependencies.add(values[i]);
 				}
 				
-				dependencyTree.put(key, depedencies);
+				dependencyTree.put(key, dependencies);
 			}
 		}
 		
@@ -52,7 +52,7 @@ public class TransitiveDependency {
 	}
 	
 	
-	private Set<String> solveDepedencies(String root) {
+	private Set<String> solveDependencies(String root) {
 		
 		Set<String> dependencies = new HashSet<>();
 		
@@ -68,16 +68,16 @@ public class TransitiveDependency {
 				if(localDependencies != null && !localDependencies.isEmpty())
 					dependencies.addAll(localDependencies);
 				
-				dependencies.addAll(solveDepedencies(dependency));
+				dependencies.addAll(solveDependencies(dependency));
 			}
 		}
 		
 		return dependencies;
 	}
 	
-	private void solveDepedencies() {
+	private void solveDependencies() {
 		dependencyTree.forEach((key, values) -> {
-			solveDepedencies(key);
+			solveDependencies(key);
 		});
 	}
 
