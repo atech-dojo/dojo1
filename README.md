@@ -30,4 +30,5 @@ O conjunto de dependências completo para cada classe, para o conjunto anterior 
 
 
 Traduzido livremente de: http://codekata.pragprog.com/2007/01/kata_eighteen_t.html
+
 Fonte: http://dojopuzzles.com/problemas/exibe/dependencias-transitivas/
